@@ -1,0 +1,22 @@
+# Ignore Log Directory
+log/*.log
+tmp/**/*
+log/*.pid
+log/call_*
+db/*.bkp
+.DS_Store
+*.swp
+*~
+public/images/uploads
+public/images/uploads/*
+test/test_images/*
+public/test/*
+config/locomotive.yml
+config/database.yml
+config/mail_servers.yml
+index/**/*
+config/billing_on_rails.yml
+config/s3.yml
+config/hostnames.yml
+config/newrelic.yml
+config/backup_fu.yml
