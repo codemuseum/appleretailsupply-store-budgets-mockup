@@ -96,7 +96,7 @@ li.with-submenu {position:relative;}
 #body td.complete {text-align:center; vertical-align:center;}
 #body td.incomplete {text-align:center; vertical-align:center; color:#585858;}
 #body td.remove {text-align:center; }
-.status-bar .status-incomplete {width:100px; background:transparent url(../images/td-status-bg.png) center left repeat-x; height:8px;}
+.status-bar .status-incomplete {width:100%; background:transparent url(../images/td-status-bg.png) center left repeat-x; height:8px;}
 .status-bar .status-completed { background:transparent url(../images/td-status-completed-bg.png) center left repeat-x; height:8px;}
 #body table tr.disabled { color:#585858;}
 #body table tr.disabled a { color:#585858;}
@@ -131,6 +131,26 @@ a.red-button {padding:4px; border:1px solid #acbed0; -webkit-border-radius:5px; 
 
 /* page specific css */
 .big-app-search {width:85%;}
+
+
+/* --- fiscal year --- */
+#body table.fiscal-year-grid {border:0;}
+#body table.fiscal-year-quarter-grid td {text-align:center;}
+#body table.fiscal-year-quarter-grid td a {display:block;}
+#body table.fiscal-year-quarter-grid tr:hover td { background-color:#f0f0f0;}
+#body table.fiscal-year-quarter-grid tr td:hover { background-color:#fefefe;}
+#body table.fiscal-year-quarter-grid tr.performance td {font-size:83%;}
+#body table.fiscal-year-quarter-grid tr.performance:hover td,
+#body table.fiscal-year-quarter-grid tr.performance td:hover {background-color:#fff;}
+#body table.fiscal-year-quarter-grid tr.spacer td {padding:25px 12px;}
+#body table.fiscal-year-quarter-grid tr.spacer:hover td,
+#body table.fiscal-year-quarter-grid tr.spacer td:hover {background-color:#fff;}
+
+
+
+
+/* --- iphone tracker legacy --- */
+
 
 /* search result */
 .app-search-result {width:600px; margin-left:auto; margin-right:auto; padding:20px 0px; position:relative; border-bottom:1px solid #e6e6e6;}
