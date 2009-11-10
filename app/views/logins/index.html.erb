@@ -1,0 +1,16 @@
+<div class="outlined-content login-box">
+  <h2>Sign in to access the Store Budgets Application</h2> 
+  <div class="field-row">
+    <div class="field-label"><label for="">Login:</label></div>
+    <div class="field-value">&nbsp;<%= text_field_tag 'login', 'retailsupply@apple.com' %></div>
+  </div>
+
+  <div class="field-row">
+    <div class="field-label"><label for="">Password:</label></div>
+    <div class="field-value">&nbsp;<%= password_field_tag 'password', '' %></div>
+  </div>
+
+  <div class="centered submit-box">
+    <%= submit_tag "Sign In" %>
+  </div>
+</div>

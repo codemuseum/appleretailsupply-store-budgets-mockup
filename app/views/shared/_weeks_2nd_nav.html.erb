@@ -1,0 +1,76 @@
+<table class="fiscal-year-quarter-grid" cellspacing="0" cellpadding="0">
+
+  <% d = Date.civil(2008,9,27) -%>
+  <% last = Date.civil(2008,12,28) -%>
+  <% fiscal_week = 1 -%>
+  <% last_month_label = 9 -%>
+  <% current_period = 1 -%>
+  <% weeks_in_previous_period = [4, 5, 4] -%>
+  <% current_week_in_period = 7 -%>
+  <% week_class_mock_data = ['processed', 'viewing', 'missing-files-in-past', 'processed', 'processed', 'processed', 'ready-to-process', 'ready-to-process', 'ready-to-process', 'week-being-uploaded', 'missing-files-in-future'] %>
+  <% week_link_mock_data = ['/processed', '/processed', '/past_missed_files', '/processed', '/processed', '/processed', '/ready_to_process', '/ready_to_process', '/ready_to_process', '/week_being_uploaded', ''] %>
+
+  <% while ((d = d + 1) < last) -%>
+
+    <%# Beginning of a new week can mean many things -%>
+    <% if d.cwday == 7 -%>
+      
+      <%# End of a quarter or period (but skip the first one) %>
+      <% if current_period != 1 && (fiscal_week % 13 == 1  || current_week_in_period >= weeks_in_previous_period[(current_period - 1) % 3]) -%>
+      <tr class="performance">
+        <td colspan="4">Performance: 50%</td>
+        <td class="status-bar" colspan="3">
+          <div class="status-incomplete">
+            <div class="status-completed" style="width:50%;"></div>
+          </div>
+        </td>
+      </tr>
+      <% end -%>
+      
+      <%# Beginning of a new quarter -%>
+      <% if fiscal_week % 13 == 1 -%>
+        <% if ((fiscal_week / 13) + 1).to_i > 1 -%>
+          </td></table><!-- end quarter -->
+        <% end -%>
+        <tr><th colspan="7"><%=h ((fiscal_week / 13) + 1).to_i.ordinalize %> Quarter</th></tr>
+      <% end -%>
+    
+      <%# Beginning of a new period -%>
+      <% if current_week_in_period >= weeks_in_previous_period[(current_period - 1) % 3] -%>
+        <% if fiscal_week % 13 != 1 %>
+          <tr class="spacer"><td colspan="7"><!-- padding --></td></tr>
+        <% end %>
+      
+        <tr class="header">
+          <th colspan="4">Period <%=h current_period %></th>
+          <th colspan="3"><%=h Date::MONTHNAMES[(d + 7).month] %></th>
+        </tr>
+        <% last_month_label = d.month -%>
+        <% current_period += 1 -%>
+        <% current_week_in_period = 0 -%>
+      <% end -%>
+
+      <tr class="week-<%=h fiscal_week %><%= week_class_mock_data[fiscal_week] ? " #{week_class_mock_data[fiscal_week]}" : '' %>">
+    <% end -%>
+
+    <td title="<%=h "Week #{fiscal_week} - #{d.strftime('%m/%d/%y')}" %>"><%= link_to h(d.day), "/weeks/1#{week_link_mock_data[fiscal_week] ? week_link_mock_data[fiscal_week] : '' }" %></td>
+
+    <% if d.cwday == 6 -%>
+      </tr>
+      <% fiscal_week +=  1 -%>
+      <% current_week_in_period += 1 -%>
+    <% end -%>
+    
+  <% end -%>
+  
+  <tr class="performance">
+    <td colspan="4">Performance: 50%</td>
+    <td class="status-bar" colspan="3">
+      <div class="status-incomplete">
+        <div class="status-completed" style="width:50%;"></div>
+      </div>
+    </td>
+  </tr>
+    
+  </tr><!-- End Main Quarter Columns -->
+</table>

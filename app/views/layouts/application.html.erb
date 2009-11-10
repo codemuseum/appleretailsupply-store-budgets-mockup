@@ -1,0 +1,102 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>Budget: <%= controller.action_name %></title>
+  <%= stylesheet_link_tag 'itunes', 'facebox' %>
+  <%= javascript_include_tag 'jquery', 'jquery-scrollTo-min', 'facebox' %>
+</head>
+<body>
+
+<div id="header">
+  <div class="top-search-box">
+    <input name="s" id="s" type="search" placeholder="Search for Store" autosave="com.apple.retailsupply" results="0"<%= @enable_search ? '' : " disabled='true'" %> />
+  </div>
+  
+  <%# if logged_in? %>
+  <div class="button-box logout">
+    <a class="button" href="/splash"><span class="icon">Back</span></a>
+  </div>
+  <%# end %>
+  
+  <div class="title">
+    Store Budgets Tool
+  </div>
+</div>
+
+<div id="content">
+  
+  <%# if navigation %>
+    <div id="navigation">
+      <div class="nav-section">
+        <h2>Fiscal Years</h2>
+      
+        <a href="/fiscal_years/1" id="fiscal_year_2010-nav" class="nav-el<%= @section == 'fiscal_year_2010' ? ' selected' : '' %>"><span class="icon">2010</span></a>
+        <a href="/fiscal_years/1" id="fiscal_year_2009-nav" class="nav-el<%= @section == 'fiscal_year_2009' ? ' selected' : '' %>"><span class="icon">2009</span></a>
+        <a href="/fiscal_years/1" id="fiscal_year_2008-nav" class="nav-el<%= @section == 'fiscal_year_2008' ? ' selected' : '' %>"><span class="icon">2008</span></a>
+        <a href="/fiscal_years/1" id="fiscal_year_2007-nav" class="nav-el<%= @section == 'fiscal_year_2007' ? ' selected' : '' %>"><span class="icon">2007</span></a>
+        <a href="/fiscal_years/1" id="fiscal_year_2006-nav" class="nav-el<%= @section == 'fiscal_year_2006' ? ' selected' : '' %>"><span class="icon">2006</span></a>
+        <a href="/fiscal_years/1" id="fiscal_year_2005-nav" class="nav-el<%= @section == 'fiscal_year_2005' ? ' selected' : '' %>"><span class="icon">2005</span></a>
+      </div>
+      
+      <%# if current_user.admin? %><a href="/settings" id="settings-nav" class="nav-el<%= @section == 'settings' ? ' selected' : '' %>"><span class="icon">Settings</span></a><%# end %>
+    </div>
+  <%# end %>
+  
+  <% if @week_navigation %>
+    <div id="navigation-2nd">
+      <%= render :partial => 'shared/weeks_2nd_nav' %>
+    </div>
+  <% end %>
+  
+  <div id="main" class="<%# navigation ? "with-navigation" : ""%> with-navigation<%= @week_navigation ? ' with-2nd-navigation' : '' %>">
+    <%= render :partial => "shared/#{@section}_subnav" unless @section.blank? %>
+    <div id="body">
+      <%= yield %>
+    </div>
+  </div>
+
+</div>
+
+<div id="footer">
+</div>
+
+<script type="text/javascript">
+  function hideDiv(id) {$('#'+id).addClass('hidden');}
+  function showDiv(id) {$('#'+id).removeClass('hidden');}
+  function showDropdown(id, base) { // for developer email 
+    submenu = $('#' + id);
+    var menuel = $('#' + base);
+    submenu.remove();
+    $('#main').append(submenu);
+    var submenu = $('#' + id);
+    submenu[0].style.top = (menuel.offset().top - 55) + "px";
+    submenu[0].style.left = (menuel.offset().left - <%= @week_navigation ? '361' : '180' %> + 12) + "px";
+    submenu.removeClass('hidden');
+    menuel.addClass('viewing-submenu');
+    $(document).click(function() { hideSubmenu(id, base); });
+  }
+  function showSubmenu(id, base) { 
+    submenu = $('#' + id);
+    var menuel = $('#' + base);
+    submenu.remove();
+    $('#main').append(submenu);
+    var submenu = $('#' + id);
+    submenu[0].style.top = "25px";
+    submenu[0].style.left = (menuel.offset().left - <%= @week_navigation ? '361' : '180' %> + 2) + "px";
+    submenu.removeClass('hidden');
+    menuel.addClass('viewing-submenu');
+    $(document).click(function() { hideSubmenu(id, base); });
+  }
+  function hideSubmenu(id, base) {
+    var submenu = $('#' + id);
+    var menuel = $('#' + base);
+    submenu.addClass('hidden');
+    menuel.removeClass('viewing-submenu');
+  }
+</script>
+
+</body>
+</html>

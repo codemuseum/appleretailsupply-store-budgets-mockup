@@ -30,6 +30,7 @@ input {font-size:110%; font-family:inherit; padding:1px;}
 #header a.button:active {background-image: url(../images/header-button-bg-active.png); background-color:#727272; color:#fff; text-shadow:#4f4f50 1px 1px 1px;}
 #header .button-box {padding:30px 10px;}
 #header .button-box.logout {position:absolute; top:0;}
+#header .top-search-box { position:absolute; right:20px; top:25px;}
 
 #header .title {text-align:center; font-size:110%;text-shadow:#e9eaea 1px 1px 1px; color:#494a4d; padding-top:25px;}
 
@@ -39,6 +40,11 @@ input {font-size:110%; font-family:inherit; padding:1px;}
 #content #navigation a {display:block; font-size:83%; color:#000; text-decoration:none; padding:0px 10px; margin-top:0.5em; }
 #content #navigation a span.icon {display:block; padding-left:23px; background:transparent url(../images/nav/global-icon.png) center left no-repeat; line-height:2em;  }
 #content #navigation a.selected { background: #1867c7 url(../images/navigation-selected-bg.png) top left repeat-x; color:#fff; text-shadow:#021b3a 1px 1px 2px; font-weight:bold;}
+
+/* 2nd navigation general setup */
+#content #navigation-2nd {height:100%; width:180px; background-color:#d9dee9; overflow:auto; top:72px; left:181px; position:absolute; border-right:1px solid #bbbbbb; padding:10px 0px; font-size:75%;}
+#content #navigation-2nd a {color:#000; text-decoration:none;}
+#content #navigation-2nd a:hover { text-decoration:underline;}
 
 /* subnavigation general setup */
 #subnav { background:#464646 url(../images/subnav-bg.png) top left repeat-x; color:#fff; text-shadow:#000 -1px 0px 2px; font-size:83%;}
@@ -74,6 +80,7 @@ li.with-submenu {position:relative;}
 #content #main {position:relative;}
 #content #main.with-navigation { margin-left:180px; }
 #content #main.with-navigation #body {padding:10px;}
+#content #main.with-2nd-navigation {margin-left:362px;}
 
 /* body general */
 #body {overflow:auto;}
@@ -85,14 +92,26 @@ li.with-submenu {position:relative;}
 #body .light-blue {color:#acbed0;}
 #body .red {color:#b72a2a;}
 
+#navigation-2nd table,
+#facebox .content table {font-size:83%;}
+
+#navigation-2nd table,
+#facebox .content table,
 #body table { border:1px solid #e2e2e2; -webkit-border-radius:3px; margin-left:auto; margin-right:auto; margin:20px auto; }
+#facebox .content table tr.header,
+#navigation-2nd table tr.header,
 #body table tr.header { background:#dee4ea url(../images/th-bg.png) top left repeat-x; color:#1b1b1b;  }
+#navigation-2nd table th,
+#facebox .content table th,
 #body table th {padding:4px 12px; border-right:1px solid #c4d0d9; border-bottom:1px solid #b5bec8;}
 #body table th.sorted-desc, 
 #body table th.sorted-asc { position:relative; background:#b3bfca url(../images/th-bg-active.png) top left repeat-x;   }
 #body table th.sorted-desc .sort-icon { width:9px; height:1.5em; float:right; background:transparent url(../images/th-sorted-desc.png) center right no-repeat; padding-left:10px; }
 #body table th.sorted-asc .sort-icon { width:9px; height:1.5em; float:right; background:transparent url(../images/th-sorted-asc.png) center right no-repeat; padding-left:10px; }
+#navigation-2nd table td,
+#facebox .content table td,
 #body table td {padding:12px 12px; background-color:#fefefe; border-top:1px solid #e6e6e6;}
+#navigation-2nd table td {padding:2px;}
 #body td.complete {text-align:center; vertical-align:center;}
 #body td.incomplete {text-align:center; vertical-align:center; color:#585858;}
 #body td.remove {text-align:center; }
@@ -135,19 +154,57 @@ a.red-button {padding:4px; border:1px solid #acbed0; -webkit-border-radius:5px; 
 
 /* --- fiscal year --- */
 #body table.fiscal-year-grid {border:0;}
+
+#navigation-2nd table.fiscal-year-quarter-grid td,
 #body table.fiscal-year-quarter-grid td {text-align:center;}
+#navigation-2nd table.fiscal-year-quarter-grid td a,
 #body table.fiscal-year-quarter-grid td a {display:block;}
+#navigation-2nd table.fiscal-year-quarter-grid tr:hover td,
 #body table.fiscal-year-quarter-grid tr:hover td { background-color:#f0f0f0;}
+#navigation-2nd table.fiscal-year-quarter-grid tr td:hover,
 #body table.fiscal-year-quarter-grid tr td:hover { background-color:#fefefe;}
-#body table.fiscal-year-quarter-grid tr.performance td {font-size:83%;}
+#navigation-2nd table.fiscal-year-quarter-grid tr.performance td,
+#body table.fiscal-year-quarter-grid tr.performance td {font-size:83%; font-weight:bold; text-shadow:#fff 1px 1px 1px;}
+
+#navigation-2nd table.fiscal-year-quarter-grid tr.performance:hover td,
+#navigation-2nd table.fiscal-year-quarter-grid tr.performance td:hover,
 #body table.fiscal-year-quarter-grid tr.performance:hover td,
 #body table.fiscal-year-quarter-grid tr.performance td:hover {background-color:#fff;}
+#navigation-2nd table.fiscal-year-quarter-grid tr.spacer td { padding:12px 3px; background-color:transparent;}
 #body table.fiscal-year-quarter-grid tr.spacer td {padding:25px 12px;}
+#navigation-2nd table.fiscal-year-quarter-grid tr.spacer:hover td,
+#navigation-2nd table.fiscal-year-quarter-grid tr.spacer td:hover {background-color:transparent;}
 #body table.fiscal-year-quarter-grid tr.spacer:hover td,
 #body table.fiscal-year-quarter-grid tr.spacer td:hover {background-color:#fff;}
 
 
+#navigation-2nd table.fiscal-year-quarter-grid tr.viewing td,
+#body table.fiscal-year-quarter-grid tr.viewing td { background-color:#317cf2; color:#fff; text-shadow:1px 1px 3px #333;}
+#content #navigation-2nd table.fiscal-year-quarter-grid tr.viewing td a,
+#body table.fiscal-year-quarter-grid tr.viewing td a {color:#fff;}
+#navigation-2nd table.fiscal-year-quarter-grid tr.processed td,
+#body table.fiscal-year-quarter-grid tr.processed td { background-color:#ccc; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.processed:hover td,
+#body table.fiscal-year-quarter-grid tr.processed:hover td { background-color:#aaa; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.missing-files-in-past td,
+#body table.fiscal-year-quarter-grid tr.missing-files-in-past td { background-color:#ff9393; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.missing-files-in-past:hover td,
+#body table.fiscal-year-quarter-grid tr.missing-files-in-past:hover td { background-color:#f46f6f; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.ready-to-process td,
+#body table.fiscal-year-quarter-grid tr.ready-to-process td { background-color:#a0ff99; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.ready-to-process:hover td,
+#body table.fiscal-year-quarter-grid tr.ready-to-process:hover td { background-color:#7ee777; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.week-being-uploaded td,
+#body table.fiscal-year-quarter-grid tr.week-being-uploaded td { background-color:#fffe99; }
+#navigation-2nd table.fiscal-year-quarter-grid tr.week-being-uploaded:hover td,
+#body table.fiscal-year-quarter-grid tr.week-being-uploaded:hover td { background-color:#fffd67; }
 
+/* --- week: processed week --- */
+
+#body table.stores-week-grid td.status-bar,
+#body table.stores-week-grid td.status-bar a { color:#555; text-align:center; font-size:83%;}
+#body table.stores-week-grid td.status-bar:hover,
+#body table.stores-week-grid td.status-bar:hover a { color:#000;}
 
 /* --- iphone tracker legacy --- */
 
