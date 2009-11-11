@@ -208,6 +208,8 @@ a.red-button {padding:4px; border:1px solid #acbed0; -webkit-border-radius:5px; 
 #body table.fiscal-year-quarter-grid tr.week-being-uploaded:hover td { background-color:#fffd67; }
 
 /* --- week: processed week --- */
+#content #navigation-2nd .ajax-paging-control  {color:#425E77;text-shadow:#fff 1px 1px 1px; text-align:center;}
+#content #navigation-2nd .ajax-paging-control a {color:#425E77;  }
 
 #body table.stores-week-grid td.status-bar,
 #body table.stores-week-grid td.status-bar a { color:#555; text-align:center; font-size:83%;}

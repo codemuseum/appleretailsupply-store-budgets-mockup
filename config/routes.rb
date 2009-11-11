@@ -3,6 +3,7 @@ ActionController::Routing::Routes.draw do |map|
   map.resources :logins
   map.resources :fiscal_years
   map.resources :weeks, :member => {:processed => :get, :ready_to_process => :get, :print => :get, :view_upload => :get}
+  map.resources :setup_fy_dates
   
   # Install the default routes as the lowest priority.
   # Note: These default routes make all actions in every controller accessible via GET requests. You should
