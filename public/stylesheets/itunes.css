@@ -148,6 +148,14 @@ a.red-button {padding:4px; border:1px solid #acbed0; -webkit-border-radius:5px; 
 .col_left {width:45%; float:left; margin-left:5%;}
 .col_right {width:45%; float:right; margin-right:5%;}
 
+/* tabs */
+#body .tabs {text-align:center;}
+#body .tabs a { border:1px solid #9cadc0; border-left:0; background: #b8c2ca url(/images/tab-bg.png) repeat-x; color:#42505c;padding:3px 6px;}
+#body .tabs a:active {background: #edf1f5 url(/images/tab-bg-active.png) repeat-x;}
+#body .tabs a.active {background: #edf1f5 url(/images/tab-bg-active.png) repeat-x; color:#000;}
+#body .tabs a.first { padding-left: 10px; -webkit-border-top-left-radius:10px;-webkit-border-bottom-left-radius:10px; border-left:1px solid #9cadc0;}
+#body .tabs a.last { padding-right: 10px; -webkit-border-top-right-radius:10px;-webkit-border-bottom-right-radius:10px; }
+
 /* page specific css */
 .big-app-search {width:85%;}
 
@@ -205,6 +213,14 @@ a.red-button {padding:4px; border:1px solid #acbed0; -webkit-border-radius:5px; 
 #body table.stores-week-grid td.status-bar a { color:#555; text-align:center; font-size:83%;}
 #body table.stores-week-grid td.status-bar:hover,
 #body table.stores-week-grid td.status-bar:hover a { color:#000;}
+
+/* --- week: status report --- */
+.upload-exchange {text-align:center;}
+.upload-exchange input.file { font-size:83%; }
+#body table.files-status .files-status-header {font-weight:bold; text-align:right; background-color:#eee;}
+table.files-status .files-status {text-align:center;font-size:83%; color:#555; }
+#body table.files-status .files-status a,
+table.files-status .files-status a {color:#555;}
 
 /* --- iphone tracker legacy --- */
 

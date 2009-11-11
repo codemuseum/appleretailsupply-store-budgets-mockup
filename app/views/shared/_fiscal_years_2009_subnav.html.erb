@@ -24,7 +24,8 @@
       <%= link_to "Weeks#{@week ? ' ('+@week+')' : ''}&nbsp;", '/fiscal_years/1' %> 
       <ol class="sub-menu hidden" id="weeks_submenu">
         <li><%= link_to 'Q1 P1 W1: 9/26/09 - 10/1/09 - Processed', "/weeks/1/processed" %></li>
-        <li><%= link_to 'Q1 P1 W2: 10/2/09 - 10/10/09 - Not Processed', "/weeks/1" %></li>
+        <li><%= link_to 'Q1 P1 W2: 10/2/09 - 10/10/09 - Ready to Process', "/weeks/1/ready_to_process" %></li>
+        <li><%= link_to 'Q1 P1 W3: 10/2/09 - 10/10/09 - Waiting for Files', "/weeks/1/ready_to_process" %></li>
       </ol>
     </li>
   </ul>

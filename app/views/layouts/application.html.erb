@@ -96,6 +96,10 @@
     submenu.addClass('hidden');
     menuel.removeClass('viewing-submenu');
   }
+  function activateTab(tabsBox, activeTab) {
+    $('#' + tabsBox + ' a').removeClass('active');
+    $('#' + activeTab).addClass('active');
+  }
 </script>
 
 </body>
