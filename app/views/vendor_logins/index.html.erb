@@ -1,0 +1,31 @@
+<script type="text/javascript">
+  var changePassword = "<div class='facebox-text'>Are you sure you'd like to change the password for the XPDX login?<br/> New Password: " +
+    '<%= password_field_tag '', '' %>'+'</div>'+
+    "<div class='centered top_pad'><a href='' class='red-button'>Change Password</a></div>";
+</script>
+
+
+
+<h2>Vendor Logins</h2>
+
+
+
+<table class="app-status" cellspacing="0" cellpadding="0">
+  <tr class="header">
+    <th class="sorted-desc"><div class="sort-icon"></div><a href="#SORT">Name</a></th>
+    <th><a href="#SORT">Email</a></th>
+    <th><a href="#SORT">Password</a></th>
+  </tr>
+
+  <tr>
+    <td><a href="/vendor_logins/1/edit">XPDX</a></td>
+    <td><a href="mailto:vendor@xpdx.com">vendor@xpdx.com</a></td>
+    <td class="centered"><%=link_to "Change", 'javascript:jQuery.facebox(changePassword)', :class => 'main-content-button' %></td>
+  </tr>
+
+  <tr>
+    <td><a href="/vendor_logins/1/edit">Staples</a></td>
+    <td><a href="mailto:vendor@staples.com">vendor@staples.com</a></td>
+    <td class="centered"><%=link_to "Change", 'javascript:jQuery.facebox(changePassword)', :class => 'main-content-button' %></td>
+  </tr>
+</table>
