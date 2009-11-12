@@ -1,0 +1,41 @@
+
+.widget {width:80%; position:relative; background-color:#304464; color:#fff; -webkit-border-radius:15px; -webkit-border-radius:15px; margin:0 auto; text-shadow:#30394a 1px 1px 1px; margin-top:25px;}
+#body .widget a {color:#b2b8c3;}
+.widget .info {width:35%; float:right; background-color:#3b547e; -webkit-border-top-right-radius:15px; -webkit-border-bottom-right-radius:15px; padding:5px; text-align:center; }
+.widget.big-info-area .info {width:50%;}
+
+.widget .info h1 {margin:5px 0 15px 0; font-weight:normal; letter-spacing:-1px;}
+.widget .info .total { font-size:220%; margin-top:15px; margin-bottom:9px;}
+.widget .info .total.green span {background:#539924 url(/images/approved-bg.png) repeat-x;}
+.widget .info .total span {padding:5px 8px; text-shadow:#333 -1px -1px 1px;  -webkit-border-radius:6px; -webkit-border-radius:6px; border:1px solid #438516;}
+.widget .info .total-spent {font-size:110%; margin-bottom:25px;}
+.widget .info ol {width:50%; text-align:left; padding-left:25px; margin:20px auto;}
+
+.widget .graphs {width:65%;}
+.widget.big-info-area .graphs {width:50%;}
+
+.widget .vendor-graphs-box { padding:10px 5px; border-bottom:1px solid #2b3d5b; border-top:1px solid #405880;}
+.widget .vendor-graphs-box.first {border-top:0;}
+.widget .vendor-graphs-box.last {border-bottom:0;}
+.widget .label { float:left; width:30%; height:35px; text-align:right; padding:3px; padding-top:15px;}
+.clear-left {clear:left;}
+
+.widget .spent-number { text-align:center; font-size:83%; font-weight:bold;}
+.widget .graph {background:#dfe5ea url(/images/th-bg.png) repeat-x; width:63%; margin-top:2px; height:45px; margin-left:34%; border:1px solid #b6bdc3; position:relative;}
+.widget .graph-row.over-budget .graph {background:#a02525 url(/images/declined-bg.png) repeat-x; border-color:#761010;}
+
+.widget .graph .graph-left {position:right; right:10px; top:8px; width:10%; position:absolute; color:#374d6b; text-shadow:#fff 1px 1px 1px; text-align:center;}
+.widget .graph-row.over-budget .graph-left { color:#fff; text-shadow:#30394a 1px 1px 1px;}
+
+.widget .graph-row .graph-spent {height:30px; text-align:center; padding-top:15px;}
+
+.widget .graph-row.over-budget .graph-spent { border-right:1px solid #6b0808;}
+.widget .graph-row.near-budget .graph-spent {background:#b2bec9 url(/images/th-bg-active.png) repeat-x; border-right: 1px solid #8a99a7;}
+.widget .graph-row.under-budget .graph-spent {background:#539924 url(/images/approved-bg.png) repeat-x; border-right: 1px solid #438516;}
+
+.widget .graph-rank {float:right; }
+.widget .graph-rank h1 {margin-top:20px; margin-bottom:0;}
+.widget .graph-row.with-rank .label {width:20%;}
+.widget .graph-row.with-rank .graph {width:60%; margin-left:24%;}
+
+

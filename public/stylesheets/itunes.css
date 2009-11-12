@@ -39,7 +39,11 @@ input {font-size:110%; font-family:inherit; padding:1px;}
 #content #navigation {height:100%; width:180px; background-color:#d9dee9; overflow:auto; top:72px; left:0; position:absolute; border-right:1px solid #bbbbbb; padding:10px 0px;}
 #content #navigation a {display:block; font-size:83%; color:#000; text-decoration:none; padding:0px 10px; margin-top:0.5em; }
 #content #navigation a span.icon {display:block; padding-left:23px; background:transparent url(../images/nav/global-icon.png) center left no-repeat; line-height:2em;  }
-#content #navigation a.selected { background: #1867c7 url(../images/navigation-selected-bg.png) top left repeat-x; color:#fff; text-shadow:#021b3a 1px 1px 2px; font-weight:bold;}
+#content #navigation a:hover { background: #8295bd url(../images/navigation-hovered-bg.png) top left repeat-x; color:#fff; text-shadow:#535f81 1px 1px 1px; font-weight:bold;}
+#content #navigation a.selected { background: #1867c7 url(../images/navigation-selected-bg.png) top left repeat-x; color:#fff; text-shadow:#021b3a 1px 1px 1px; font-weight:bold;}
+#content #navigation .nav-section {}
+#content #navigation .nav-section h2 {color:#505d6d; text-align:left; text-shadow:#f3f5f8 1px 1px 1px;  font-size:80%; text-transform: uppercase; margin-left:10px; padding-bottom:0;}
+#content #navigation .nav-section a{ padding-left:25px;}
 
 /* 2nd navigation general setup */
 #content #navigation-2nd {height:100%; width:180px; background-color:#d9dee9; overflow:auto; top:72px; left:181px; position:absolute; border-right:1px solid #bbbbbb; padding:10px 0px; font-size:75%;}

@@ -1,0 +1,54 @@
+<script type="text/javascript">
+  var addCombinationBuild_DUPLICATE = "<div class='facebox-text'>New Combo Build Title: "+'<%= text_field_tag '', 'Super Build' %>'+"</div>"+
+    "<div class='centered top_pad'><a href='/release_builds/1' class='green-button'>Create Combo Build</a></div>";
+</script>
+
+
+<div id="subnav">
+  <ul>
+    <!-- <li><%= link_to image_tag('subnav-back-button.png'), '' %></li> -->
+    <li class="chevron with-submenu <%= @subsection == "locales" ? 'active' : '' %>" id="locales_menu_item">
+      <%= link_to image_tag('subnav-chevron-down-arrow.png'), 'javascript:showSubmenu(\'locales_submenu\', \'locales_menu_item\')', :class => "submenu-arrow" %> 
+      <%= link_to 'FY 2009&nbsp;', '/stores/1/year' %>
+      <ol class="sub-menu hidden" id="locales_submenu">
+        <li><%= link_to 'Fiscal Year 2010', "/stores/1/year" %></li>
+        <li><%= link_to 'Fiscal Year 2009', "/stores/1/year" %></li>
+        <li><%= link_to 'Fiscal Year 2007', "/stores/1/year" %></li>
+        <li><%= link_to 'Fiscal Year 2006', "/stores/1/year" %></li>
+        <li><%= link_to 'Fiscal Year 2005', "/stores/1/year" %></li>
+      </ol>
+    </li>
+    <li class="chevron with-submenu <%= @subsection == "quarters" ? 'active' : '' %>" id="quarters_menu_item">
+      <div class="chevron-divider <%= @subsection == "setup_fy_dates" ? ' active-chevron-before' : ' inactive-chevron-before' %>">
+        <%= link_to image_tag('subnav-chevron-down-arrow.png'), 'javascript:showSubmenu(\'quarters_submenu\', \'quarters_menu_item\')', :class => "submenu-arrow" %>       
+        <%= link_to 'Q1&nbsp;', '/stores/1' %>
+        <ol class="sub-menu hidden" id="quarters_submenu">
+          <li><%= link_to 'Quarter 1', "/stores/1" %></li>
+          <li><%= link_to 'Quarter 2', "/stores/1" %></li>
+          <li><%= link_to 'Quarter 3', "/stores/1" %></li>
+          <li><%= link_to 'Quarter 4', "/stores/1" %></li>
+        </ol>
+      </div>
+    </li>
+    
+    <li class="with-submenu <%= @subsection == "week" ? 'active' : '' %><%= @subsection == "quarters" ? ' active-chevron-before' : ' inactive-chevron-before' %>" id="weeks_menu_item">
+      <%= link_to image_tag('subnav-down-arrow.png'), 'javascript:showSubmenu(\'weeks_submenu\', \'weeks_menu_item\')', :class => "submenu-arrow" %> 
+      <%= link_to "Weeks#{@week ? ' ('+@week+')' : ''}&nbsp;", '/stores/1/week' %> 
+      <ol class="sub-menu hidden" id="weeks_submenu">
+        <li><%= link_to 'Week 1: 9/26/09 - 10/1/09', "/stores/1/week" %></li>
+        <li><%= link_to 'Week 2: 10/2/09 - 10/10/09', "/stores/1/week" %></li>
+        <li><%= link_to 'Week 3: 10/2/09 - 10/10/09', "/stores/1/week" %></li>
+      </ol>
+    </li>
+    
+    
+    
+    <li class="with-submenu <%= @subsection == "performance" ? 'active' : '' %>">
+      <%= link_to "Performance", '/stores/1' %> 
+    </li> 
+    
+    <li class="with-submenu <%= @subsection == "comparison" ? 'active' : '' %>">
+      <%= link_to "Compare to Last Year", '/stores/1/compare' %> 
+    </li>
+  </ul>
+</div>

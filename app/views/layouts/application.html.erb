@@ -41,6 +41,18 @@
         <a href="/fiscal_years/1" id="fiscal_year_2005-nav" class="nav-el<%= @section == 'fiscal_years_2005' ? ' selected' : '' %>"><span class="icon">2005</span></a>
       </div>
       
+      <div class="nav-section">
+        <h2>Stores</h2>
+      
+        <a href="/stores/1" id="store_r001-nav" class="nav-el<%= @section == 'store_r001' ? ' selected' : '' %>"><span class="icon">R100 - SOMA</span></a>
+        <a href="/stores/1" id="store_r002-nav" class="nav-el<%= @section == 'store_r002' ? ' selected' : '' %>"><span class="icon">R101 - New York</span></a>
+        <a href="/stores/1" id="store_r003-nav" class="nav-el<%= @section == 'store_r003' ? ' selected' : '' %>"><span class="icon">R102 - 14th Ave.</span></a>
+        <a href="/stores/1" id="store_r004-nav" class="nav-el<%= @section == 'store_r004' ? ' selected' : '' %>"><span class="icon">R103 - Tokyo</span></a>
+        <a href="/stores/1" id="store_r005-nav" class="nav-el<%= @section == 'store_r005' ? ' selected' : '' %>"><span class="icon">R104 - Stanford</span></a>
+        <a href="/stores/1" id="store_r006-nav" class="nav-el<%= @section == 'store_r006' ? ' selected' : '' %>"><span class="icon">R105 - Pacifica</span></a>
+      </div>
+      
+      
       <%# if current_user.admin? %><a href="/settings" id="settings-nav" class="nav-el<%= @section == 'settings' ? ' selected' : '' %>"><span class="icon">Settings</span></a><%# end %>
     </div>
   <%# end %>
