@@ -1,0 +1,41 @@
+
+
+
+<div id="subnav">
+  <ul>
+    <!-- <li><%= link_to image_tag('subnav-back-button.png'), '' %></li> -->
+    <li class="chevron with-submenu <%= @subsection == "index" ? 'active' : '' %>" id="locales_menu_item">
+      <%= link_to image_tag('subnav-chevron-down-arrow.png'), 'javascript:showSubmenu(\'locales_submenu\', \'locales_menu_item\')', :class => "submenu-arrow" %> 
+      <%= link_to 'FY 2009&nbsp;', '/countries_performance' %>
+      <ol class="sub-menu hidden" id="locales_submenu">
+        <li><%= link_to 'Fiscal Year 2010', "/countries_performance" %></li>
+        <li><%= link_to 'Fiscal Year 2009', "/countries_performance" %></li>
+        <li><%= link_to 'Fiscal Year 2007', "/countries_performance" %></li>
+        <li><%= link_to 'Fiscal Year 2006', "/countries_performance" %></li>
+        <li><%= link_to 'Fiscal Year 2005', "/countries_performance" %></li>
+      </ol>
+    </li>
+    <li class="chevron with-submenu <%= @subsection == "show" ? 'active' : '' %>" id="periods_menu_item">
+      <div class="chevron-divider <%= @subsection == "index" ? ' active-chevron-before' : ' inactive-chevron-before' %>">
+        <%= link_to image_tag('subnav-chevron-down-arrow.png'), 'javascript:showSubmenu(\'periods_submenu\', \'periods_menu_item\')', :class => "submenu-arrow" %>       
+        <%= link_to 'Period 1&nbsp;', '/countries_performance/1' %>
+        <ol class="sub-menu hidden" id="periods_submenu">
+          <li><%= link_to 'Period 1', "/countries_performance/1" %></li>
+          <li><%= link_to 'Period 2', "/countries_performance/1" %></li>
+          <li><%= link_to 'Period 3', "/countries_performance/1" %></li>
+          <li><%= link_to 'Period 4', "/countries_performance/1" %></li>
+        </ol>
+      </div>
+    </li>
+    <li class="with-submenu <%= @subsection == "week" ? 'active' : '' %> chevron-divider <%= @subsection == "show" ? ' active-chevron-before' : ' inactive-chevron-before' %>" id="weeks_menu_item">
+
+      <%= link_to image_tag('subnav-down-arrow.png'), 'javascript:showSubmenu(\'weeks_submenu\', \'weeks_menu_item\')', :class => "submenu-arrow" %> 
+      <%= link_to "Weeks#{@week ? ' ('+@week+')' : ''}&nbsp;", '/countries_performance/1/week' %> 
+      <ol class="sub-menu hidden" id="weeks_submenu">
+        <li><%= link_to 'Q1 P1 W1: 9/26/09 - 10/1/09', "/countries_performance/1/week" %></li>
+        <li><%= link_to 'Q1 P1 W2: 10/2/09 - 10/10/09', "/countries_performance/1/week" %></li>
+        <li><%= link_to 'Q1 P1 W3: 10/2/09 - 10/10/09', "/countries_performance/1/week" %></li>
+      </ol>
+    </li>
+  </ul>
+</div>

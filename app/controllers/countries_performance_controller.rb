@@ -1,0 +1,2 @@
+class CountriesPerformanceController < ApplicationController
+end

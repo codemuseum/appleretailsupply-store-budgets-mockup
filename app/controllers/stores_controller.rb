@@ -14,7 +14,7 @@ class StoresController < ApplicationController
     @subsection = "year"
   end
   
-  def week
+  def period
     @subsection = "week"
   end
 

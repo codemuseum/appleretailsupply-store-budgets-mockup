@@ -1,0 +1,66 @@
+<script type="text/javascript">
+var unprocessWeek = "<div class='facebox-text'>This week has already been processed.  If you unprocess the week, the data will no longer show up to stores.  You should only do this if you can upload corrected information and process the week again very soon.</div>"+
+"<div class='centered top_pad'><a href='' class='red-button'>Un-Process Week</a></div>";
+
+var individualVendorSpend = "<div class='facebox-text'><div class='centered'><strong>R001 - Glendale Gallery Store<br/>XPEDX Spends</strong></div></div>"+
+'<table class="stores-week-grid" cellspacing="0" cellpadding="0"><tr class="header"><th>Budget</th><th>Vendor Input</th><th>Input Currency</th><th>Exchange Rate</th><th>Spends in USD</th><th>Spend</th></tr><tr><td>$1,000</td><td>835.00</td><td>EUR</td><td>1.37</td><td>$1,000</td><td class="status-bar"><div>$1000&nbsp;of&nbsp;$1000&nbsp;spent</div><div class="status-incomplete"><div class="status-completed" style="width:100%;"></div></div></td></tr></table>';
+
+var totalVendorSpend = "<div class='facebox-text'><div class='centered'><strong>R001 - Glendale Gallery Store<br/>Total Vendor Spends</strong></div></div>"+
+'<table class="stores-week-grid" cellspacing="0" cellpadding="0"><tr class="header"><th>Vendor</th><th>Budget</th><th>Vendor Input</th><th>Input Currency</th><th>Exchange Rate</th><th>Spends in USD</th><th>Spend</th></tr><tr><td>XPDX</td><td>$1,000</td><td>835.00</td><td>EUR</td><td>1.37</td><td>$1,000</td><td class="status-bar"><div>$1000&nbsp;of&nbsp;$1000&nbsp;spent</div><div class="status-incomplete"><div class="status-completed" style="width:100%;"></div></div></td></tr><tr><td>MCM</td><td>$1,000</td><td>835.00</td><td>EUR</td><td>1.37</td><td>$1,000</td><td class="status-bar"><div>$1000&nbsp;of&nbsp;$1000&nbsp;spent</div><div class="status-incomplete"><div class="status-completed" style="width:100%;"></div></div></td></tr><tr><td>Staples</td><td>$1,000</td><td>835.00</td><td>EUR</td><td>1.37</td><td>$1,000</td><td class="status-bar"><div>$1000&nbsp;of&nbsp;$1000&nbsp;spent</div><div class="status-incomplete"><div class="status-completed" style="width:100%;"></div></div></td></tr></table>';
+
+
+</script>
+
+
+<h2>FY 2009</h2>
+
+<div class="top-right-create-box">
+<%=link_to "Print View", '#', :target => '_blank', :class => 'main-content-button' %> 
+</div>
+
+<table class="stores-week-grid" cellspacing="0" cellpadding="0">
+  <tr class="header">
+    <th class="sorted-desc"><div class="sort-icon"></div><a href="#SORT">Country Name</a></th>
+    <th><a href="#SORT">XPDX</a></th>
+    <th><a href="#SORT">Stationery</a></th>
+    <th><a href="#SORT">Genius Bar</a></th>
+    <th><a href="#SORT">Total</a></th>
+  </tr>
+
+
+  <tr>
+    <td>Switzerland</td>
+    <td class="status-bar">
+      <div>$800 of $1000 spent</div>
+      
+      <a href="javascript:jQuery.facebox(individualVendorSpend)">
+      <div class="status-incomplete">
+        <div class="status-completed" style="width:50%;"></div>
+      </div>
+      </a>
+      <!-- <div><a href="javascript:jQuery.facebox(individualVendorSpend)">View Details &raquo;</a></div> -->
+    </td>
+    <td class="status-bar">
+      <div>$800 of $1000 spent (MCM)</div>
+      <div class="status-incomplete">
+        <div class="status-completed" style="width:50%;"></div>
+      </div>
+      <!-- <div><a href="javascript:jQuery.facebox(individualVendorSpend)">View Details &raquo;</a></div> -->
+    </td>
+    <td class="status-bar">
+      <div>$800 of $1000 spent (Staples)</div>
+      <div class="status-incomplete">
+        <div class="status-completed" style="width:50%;"></div>
+      </div>
+      <!-- <div><a href="javascript:jQuery.facebox(individualVendorSpend)">View Details &raquo;</a></div> -->
+    </td>
+    <td class="status-bar">
+      <div>$2400 of $3000 spent</div>
+      <div class="status-incomplete">
+        <div class="status-completed" style="width:50%;"></div>
+      </div>
+      <!-- <div><a href="javascript:jQuery.facebox(totalVendorSpend)">View Details &raquo;</a></div> -->
+    </td>
+  </tr>
+
+</table>
